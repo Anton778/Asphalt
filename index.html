@@ -1,97 +1,38 @@
 <!DOCTYPE html>
-<html>
+<html lang="ru">
 <head>
-    <title>Асфальтированные тротуары. Слой на карте</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Карта Бердска</title>
     <style>
         h1 {
-            color: rgb(10, 100, 150);
-            font-family: Arial;
-            font-size: 100px;
+            font-family: Arial, sans-serif;
+            font-size: 36px;
             text-align: center;
-        }
-        h2 {
-            color: rgb(50, 5, 5);
-            font-family: Arial;
-            font-size: 30px;
-            text-align: center;
+            color: #333;
         }
         p {
-            color: black;
-            font-size: 30px;
-            width: 100%;
-        }
-        .button {
-            background-color: #FF4500;
-            border: none;
-            color: white;
-            padding: 20px 34px;
             text-align: center;
-            text-decoration: none;
-            display: inline-block;
-            font-size: 20px;
-            margin: 4px 2px;
+            font-size: 16px;
+            color: #555;
         }
-        summary::-webkit-details-marker { display: none; }
-        summary::-moz-list-bullet { list-style-type: none; }
-        summary::marker { display: none; }
-        summary {
-            display: inline-block;
-            padding: .3em 1.5em .3em .6em;
-            font-size: 1.4em;
-            cursor: pointer;
-            position: relative;
-        }
-        summary:before {
-            right: .3em;
-            top: .4em;
-            color: transparent;
-            background: url("data:image/svg+xml;base64,PHN2ZyBoZWlnaHQ9IjM0IiB2aWV3Qm94PSIwIDAgMjQgMjQiIHdpZHRoPSIzNCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cGF0aCBkPSJNOC41OSAxNi4zNGw0LjU4LTQuNTktNC41OC00LjU5TDEwIDUuNzVsNiA2LTYgNnoiLz48L3N2Zz4=") no-repeat 50% 50% / 1em 1em;
-            width: 1em;
-            height: 1em;
-            content: "";
-            position: absolute;
-            transition: transform .5s;
-        }
-        details[open] > summary:before {
-            transform: rotateZ(90deg);
-        }
-        summary ~ * {
-            padding: 0 1em 0 1em;
-        }
-        details[open] summary ~ * {
-            animation: sweep .5s ease-in-out;
-        }
-        @keyframes sweep {
-            0% { opacity: 0; }
-            100% { opacity: 1; }
-        }
-        summary:focus {
-            outline: 0;
-            box-shadow: inset 0 0 1px rgba(0, 0, 0, 0.3), inset 0 0 2px rgba(0, 0, 0, 0.3);
-        }
-        details {
+        iframe {
             display: block;
-            margin-bottom: .5rem;
+            margin: 0 auto;
         }
     </style>
 </head>
 <body>
-    <h1>Асфальтированные тротуары</h1>
-    <p>Здесь будет карта с данными о тротуарах.</p>
 
-    <iframe id="map_662564721" frameborder="0" width="100%" height="600px" sandbox="allow-modals allow-forms allow-scripts allow-same-origin allow-popups allow-top-navigation-by-user-activation"></iframe>
-    <script type="text/javascript">
-        (function(e,t){
-            var r=document.getElementById(e);
-            r.contentWindow.document.open(),
-            r.contentWindow.document.write(atob(t)),
-            r.contentWindow.document.close();
-        })("map_662564721", "PGJvZHk+PHN0eWxlPgogICAgICAgIGh0bWwsIGJvZHkgewogICAgICAgICAgICBtYXJnaW46IDA7CiAgICAgICAgICAgIHBhZGRpbmc6IDA7CiAgICAgICAgfQogICAgICAgIGh0bWwsIGJvZHksICNtYXAgewogICAgICAgICAgICB3aWR0aDogMTAwJTsKICAgICAgICAgICAgaGVpZ2h0OiAxMDAlOwogICAgICAgIH0KICAgICAgICAuYnVsbGV0LW1hcmtlciB7CiAgICAgICAgICAgIHdpZHRoOiAyMHB4OwogICAgICAgICAgICBoZWlnaHQ6IDIwcHg7CiAgICAgICAgICAgIGJveC1zaXppbmc6IGJvcmRlci1ib3g7CiAgICAgICAgICAgIGJhY2tncm91bmQtY29sb3I6ICNmZmY7CiAgICAgICAgICAgIGJveC1zaGFkb3c6IDAgMXB4IDNweCAwIHJnYmEoMCwgMCwgMCwgMC4yKTsKICAgICAgICAgICAgYm9yZGVyOiA0cHggc29saWQgIzAyODFmMjsKICAgICAgICAgICAgYm9yZGVyLXJhZGl1czogNTAlOwogICAgICAgIH0KICAgICAgICAucGVybWFuZW50LXRvb2x0aXAgewogICAgICAgICAgICBiYWNrZ3JvdW5kOiBub25lOwogICAgICAgICAgICBib3gtc2hhZG93OiBub25lOwogICAgICAgICAgICBib3JkZXI6IG5vbmU7CiAgICAgICAgICAgIHBhZGRpbmc6IDZweCAxMnB4OwogICAgICAgICAgICBjb2xvcjogIzI2MjYyNjsKICAgICAgICB9CiAgICAgICAgLnBlcm1hbmVudC10b29sdGlwOmJlZm9yZSB7CiAgICAgICAgICAgIGRpc3BsYXk6IG5vbmU7CiAgICAgICAgfQogICAgICAgIC5kZy1wb3B1cF9oaWRkZW5fdHJ1ZSB7CiAgICAgICAgICAgIGRpc3BsYXk6IGJsb2NrOwogICAgICAgIH0KICAgICAgICAubGVhZmxldC1jb250YWluZXIgLmxlYWZsZXQtcG9wdXAgLmxlYWZsZXQtcG9wdXAtY2xvc2UtYnV0dG9uIHsKICAgICAgICAgICAgdG9wOiAwOwogICAgICAgICAgICByaWdodDogMDsKICAgICAgICAgICAgd2lkdGg6IDIwcHg7CiAgICAgICAgICAgIGhlaWdodDogMjBweDsKICAgICAgICAgICAgZm9udC1zaXplOiAyMHB4OwogICAgICAgICAgICBsaW5lLWhlaWdodDogMTsKICAgICAgICB9CiAgICA8L3N0eWxlPjxkaXYgaWQ9Im1hcCI+PC9kaXY+PHNjcmlwdCB0eXBlPSJ0ZXh0L2phdmFzY3JpcHQiIHNyYz0iaHR0cHM6Ly9tYXBzLmFwaS4yZ2lzLnJ1LzIuMC9sb2FkZXIuanM/cGtnPWZ1bGwmYW1wO3NraW49bGlnaHQiPjwvc2NyaXB0PjxzY3JpcHQ+KGZ1bmN0aW9uKGUpe3ZhciB0PUpTT04ucGFyc2UoZSkscj10Lm9yZGVyZWRHZW9tZXRyaWVzLG49dC5tYXBQb3NpdGlvbixhPXQuaXNXaGVlbFpvb21FbmFibGVkO2Z1bmN0aW9uIG8oZSl7cmV0dXJuIGRlY29kZVVSSUNvbXBvbmVudChhdG9iKGUpLnNwbGl0KCIiKS5tYXAoZnVuY3Rpb24oZSl7cmV0dXJuIiUiK2V9KS5qb2luKCImIikpfWZ1bmN0aW9uIGUoZSl7dmFyIHRzPXRoaXM7dHMuaWQ9ZS5jb3VudGVyKy0tdHMuY2FsbHMuY291bnQsdGhpcy5tYXh9KSh7Y291bnRlcjowLCBjYWxsczpbXSwgbWF4OiAxMDAsIHBhcmFtczogcmVwZWF0ZWQuZnVuY3Rpb24odCxuKXtoaWRkZW4gZXh0aWx0X0ZVTEwnKX19O30pKHsidGlja2VyT3B0aW9uczoge30sIGRhdGFQb3NpdGlvbjoge30sIGdldF9nb3ZlclBhcnR5OiBmdW5jdGlvbigpe3JldHVybiB1bmRlZmluZWR9fSk=");</script>
+    <h1>Асфальтированные тротуары Бердска</h1>
+    <p>Слой на карте с указанием тротуаров для роллеров</p>
 
-    <h2>Детали использования карты:</h2>
-    <details>
-        <summary>Показать/скрыть инструкции</summary>
-        <p>Карта отображает данные о доступных асфальтированных тротуарах.</p>
-    </details>
+    <!-- Встроенная карта -->
+    <div style="position:relative;overflow:hidden;">
+        <a href="https://yandex.ru/maps/11314/berdsk/?utm_medium=mapframe&utm_source=maps" style="color:#eee;font-size:12px;position:absolute;top:0px;">Berdsk</a>
+        <a href="https://yandex.ru/maps/11314/berdsk/?ll=83.111175%2C54.757324&mode=usermaps&source=constructorLink&um=constructor%3Abf28b2b9bf4cb4f8972ae2c9b09ee8fd50fff17331c6f644664c92f0f01a95ee&utm_medium=mapframe&utm_source=maps&z=15.93" style="color:#eee;font-size:12px;position:absolute;top:14px;">Карта Бердска с указанием улиц и домов — Яндекс.Карты</a>
+        <iframe src="https://yandex.ru/map-widget/v1/?ll=83.111175%2C54.757324&mode=usermaps&source=constructorLink&um=constructor%3Abf28b2b9bf4cb4f8972ae2c9b09ee8fd50fff17331c6f644664c92f0f01a95ee&z=15.93" width="560" height="400" frameborder="1" allowfullscreen="true" style="position:relative;"></iframe>
+    </div>
+
 </body>
 </html>
